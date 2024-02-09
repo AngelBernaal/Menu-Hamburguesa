@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.flex{
+    background-color:rgb(20, 19, 19);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1{
+    font-size: large;
+}
+
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding-left: 0%;
+}
+
+.menu li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+.abrir{
+    display: none; /*Con none ocultamos nuestros botones*/
+}
+
+.cerrar{
+    display: none;
+}
+
+@media screen and (max-width: 700px) { /*Para dispositivos con maximo 700px entraran estos estilos*/
+
+    .abrir, .cerrar{
+        display: block;
+        font-size: xx-large;
+        color: white;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .menu{
+        opacity: 0;
+        visibility: hidden; /*oculto hasta que en js llamemos la siguiente condicion*/
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        left: 0%;
+        position: fixed;
+        background-color:rgb(20, 19, 19);
+        padding: 30px;
+        box-shadow: 0 0 0 100vmax  rgba(0, 0, 0, .4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        transition: ease-in-out 0.2s;
+    }
+
+    .menu-open{
+        opacity: 1;
+        visibility: visible; /*aqui ya se muestra*/  
+    }
+
+    .menu ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}
